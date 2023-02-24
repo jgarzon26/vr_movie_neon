@@ -7,9 +7,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      //backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+      backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Stack(
               clipBehavior: Clip.none,
@@ -117,8 +119,31 @@ class HomePage extends StatelessWidget {
                 ),
               ]
             ),
-            Text('Watch movies in Virtual Reality'),
-            Text('Download and watch offline wherever you are'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 49),
+              child: Text(
+                'Watch movies in Virtual Reality',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 34,
+                  height: 1.3,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 93),
+              child: Text(
+                'Download and watch offline wherever you are',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.75),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                ),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {},
               child: Text('Sign Up'),
