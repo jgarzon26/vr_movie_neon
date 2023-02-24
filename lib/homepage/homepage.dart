@@ -12,10 +12,11 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Stack(
+              clipBehavior: Clip.none,
               children: [
                 Positioned(
-                  left: 6,
-                  top: 83,
+                  left: 0,
+                  top: 0,
                   child: Container(
                     height: 166,
                     width: 166,
@@ -37,29 +38,30 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 400,
+                  width: 328,
+                  height: 328,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       colors: [
                         HSLColor.fromColor(Color.fromRGBO(254, 83, 187, 1)).withLightness(0.5).toColor(),
-                        Color.fromRGBO(254, 83, 187, 1),
+                        //Color.fromRGBO(254, 83, 187, 1),
                         HSLColor.fromColor(Color.fromRGBO(25, 25, 27, 1),).withLightness(0.3).toColor(),
-                        Color.fromRGBO(25, 25, 27, 1),
+                        //Color.fromRGBO(25, 25, 27, 1),
                         HSLColor.fromColor(Color.fromRGBO(9, 251, 211, 1)).withLightness(0.5).toColor(),
-                        Color.fromRGBO(9, 251, 211, 1),
+                        //Color.fromRGBO(9, 251, 211, 1),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     border: Border.all(
                       color: Colors.transparent,
-                      width: 2,
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
+                      padding: EdgeInsets.only(top: 30,),
                       width: 328,
                       height: 328,
                       decoration: BoxDecoration(
@@ -78,10 +80,14 @@ class HomePage extends StatelessWidget {
                           width: 2,
                         ),
                       ),
-                      child: Image.asset(
-                        'lib/homepage/assets/vr_guy.png',
-                        width: 436.08,
-                        height: 278,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(200),
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          'lib/homepage/assets/vr_guy.png',
+                          alignment: Alignment.centerLeft,
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                     ),
                   ),
