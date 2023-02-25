@@ -8,7 +8,6 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(25, 25, 27, 1),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -16,29 +15,6 @@ class HomePage extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-                Positioned(
-                  left: 0,
-                  top: 0,
-                  child: Container(
-                    height: 166,
-                    width: 166,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: RadialGradient(
-                        colors: [
-                          Color.fromRGBO(254, 83, 187, 1),
-                          Color.fromRGBO(254, 83, 187, 0),
-                        ],
-                        center: Alignment.center,
-                        radius: 0.5,
-                      ),
-                      border: Border.all(
-                        color: Colors.transparent,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
                 Container(
                   width: 328,
                   height: 328,
@@ -71,7 +47,7 @@ class HomePage extends StatelessWidget {
                         gradient: LinearGradient(
                           colors: [
                             Color.fromRGBO(254, 83, 187, 1),
-                            Color.fromRGBO(25, 25, 27, 1),
+                            Color.fromRGBO(25, 25, 27, 0.7),
                             Color.fromRGBO(9, 251, 211, 1),
                           ],
                           begin: Alignment.topLeft,
@@ -95,8 +71,31 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 211,
-                  top: 201,
+                  left: -30,
+                  top: -20,
+                  child: Container(
+                    height: 166,
+                    width: 166,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: RadialGradient(
+                        colors: [
+                          Color.fromRGBO(254, 83, 187, 0.6),
+                          Color.fromRGBO(254, 83, 187, 0),
+                        ],
+                        center: Alignment.center,
+                        radius: 0.5,
+                      ),
+                      border: Border.all(
+                        color: Colors.transparent,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 180,
+                  top: 180,
                   child: Container(
                     height: 200,
                     width: 200,
@@ -104,7 +103,7 @@ class HomePage extends StatelessWidget {
                       shape: BoxShape.circle,
                       gradient: RadialGradient(
                         colors: [
-                          Color.fromRGBO(9, 251, 211, 1),
+                          Color.fromRGBO(9, 251, 211, 0.6),
                           Color.fromRGBO(9, 251, 211, 0),
                         ],
                         center: Alignment.center,
@@ -144,9 +143,44 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Sign Up'),
+            Container(
+              width: 160,
+              height: 36,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(75),
+                gradient: LinearGradient(
+                  colors: [
+                    HSLColor.fromColor(Color.fromRGBO(254, 83, 187, 0.3)).withLightness(0.5).toColor(),
+                    //Color.fromRGBO(254, 83, 187, 1),
+                    HSLColor.fromColor(Color.fromRGBO(25, 25, 27, 0.3),).withLightness(0.3).toColor(),
+                    //Color.fromRGBO(25, 25, 27, 1),
+                    HSLColor.fromColor(Color.fromRGBO(9, 251, 211, 0.3)).withLightness(0.5).toColor(),
+                  ],
+                ),
+              ),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                ),
+                onPressed: () {},
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  //constraints: BoxConstraints(maxWidth: 200.0, minHeight: 50.0),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Sign Up",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
