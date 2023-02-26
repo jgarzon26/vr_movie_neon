@@ -150,11 +150,11 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(75),
                 gradient: LinearGradient(
                   colors: [
-                    HSLColor.fromColor(Color.fromRGBO(254, 83, 187, 0.3)).withLightness(0.5).toColor(),
+                    HSLColor.fromColor(Color.fromRGBO(254, 83, 187, 1)).withLightness(0.5).toColor(),
                     //Color.fromRGBO(254, 83, 187, 1),
-                    HSLColor.fromColor(Color.fromRGBO(25, 25, 27, 0.3),).withLightness(0.3).toColor(),
+                    HSLColor.fromColor(Color.fromRGBO(25, 25, 27, 1),).withLightness(0.3).toColor(),
                     //Color.fromRGBO(25, 25, 27, 1),
-                    HSLColor.fromColor(Color.fromRGBO(9, 251, 211, 0.3)).withLightness(0.5).toColor(),
+                    HSLColor.fromColor(Color.fromRGBO(9, 251, 211, 1)).withLightness(0.5).toColor(),
                   ],
                 ),
               ),
