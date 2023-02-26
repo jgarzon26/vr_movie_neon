@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vr_movie_neon/eternal_page/data/cast.dart';
+import 'castcard.dart';
 
 class EternalPage extends StatelessWidget {
 
@@ -93,12 +95,40 @@ class EternalPage extends StatelessWidget {
           ),
           Container(
             color: Color.fromRGBO(25, 25, 27, 1),
-            height: 2,
+            height: 10,
             width: double.infinity,
           ),
-          
+          Text('Cast'),
+          /*
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: () {
+                List<Widget> castCards = [];
+                for (int i = 0; i < cast.length; i++) {
+                  castCards.add(
+                    CastCard(
+                      name: cast[i]['name']!,
+                      image: cast[i]['image']!,
+                    ),
+                  );
+                }
+                return castCards;
+              }(),
+            ),
+          ),
+           */
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: ImageIcon(
+          AssetImage('lib/eternal_page/icons/play.png'),
+          color: Colors.white,
+        ),
+        backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
