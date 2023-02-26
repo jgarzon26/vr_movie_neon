@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vr_movie_neon/homepage/EllipseIcon.dart';
 
+import '../movies_selection/selectionpage.dart';
+
 class HomePage extends StatelessWidget {
 
   @override
@@ -164,7 +166,12 @@ class HomePage extends StatelessWidget {
                   elevation: 0,
                   shadowColor: Colors.transparent,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SelectionPage()),
+                  );
+                },
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
