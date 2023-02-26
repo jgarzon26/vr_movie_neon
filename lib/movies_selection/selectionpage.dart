@@ -9,46 +9,83 @@ class SelectionPage extends StatelessWidget {
   Widget build(BuildContext context){
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
+      backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
               'What would you like to watch?',
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.search,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
             ),
-            title: Text(
-              'Search',
+            ListTile(
+              leading: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              title: Text(
+                'Search',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
+              ),
+              trailing: Icon(
+                Icons.mic,
+                color: Colors.white,
+              ),
             ),
-            trailing: Icon(
-              Icons.mic,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'New Movies',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  )
+                ),
+              ),
             ),
-          ),
-          Text('New Movies'),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: SizedBox(
-              height: 210,
+            SizedBox(
+              height: 180,
               child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: newMovies.map((e) => MovieImageButton(imageLink: e,)).toList(),
               ),
             ),
-          ),
-          Text('Upcoming Movies'),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: SizedBox(
-              height: 210,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                    'Upcoming Movies',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    )
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 180,
               child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: upcomingMovies.map((e) => MovieImageButton(imageLink: e,)).toList(),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -61,7 +98,7 @@ class SelectionPage extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 75,
+          height: 50,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

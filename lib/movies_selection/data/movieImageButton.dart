@@ -17,7 +17,7 @@ class MovieImageButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: AssetImage(imageLink),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
     );
