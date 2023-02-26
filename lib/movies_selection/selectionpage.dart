@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vr_movie_neon/movies_selection/data/movieImageButton.dart';
+import 'package:vr_movie_neon/movies_selection/data/upcoming_movies.dart';
+import 'package:vr_movie_neon/movies_selection/new_movies.dart';
 
 class SelectionPage extends StatelessWidget {
 
@@ -7,9 +10,10 @@ class SelectionPage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
-              'What would you like to watch?'
+              'What would you like to watch?',
           ),
           ListTile(
             leading: Icon(
@@ -23,25 +27,25 @@ class SelectionPage extends StatelessWidget {
             ),
           ),
           Text('New Movies'),
-          Expanded(
-            child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Image.asset('lib/movies_selection/assets/image 91.png'),
-                  Image.asset('lib/movies_selection/assets/image 92.png'),
-                  Image.asset('lib/movies_selection/assets/image 90.png'),
-                ]
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: SizedBox(
+              height: 210,
+              child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: newMovies.map((e) => MovieImageButton(imageLink: e,)).toList(),
+              ),
             ),
           ),
           Text('Upcoming Movies'),
-          Expanded(
-            child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Image.asset('lib/movies_selection/assets/image 93.png'),
-                  Image.asset('lib/movies_selection/assets/image 84.png'),
-                  Image.asset('lib/movies_selection/assets/image 94.png'),
-                ]
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: SizedBox(
+              height: 210,
+              child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: upcomingMovies.map((e) => MovieImageButton(imageLink: e,)).toList(),
+              ),
             ),
           ),
         ],
@@ -53,11 +57,11 @@ class SelectionPage extends StatelessWidget {
         ),
         backgroundColor: Color.fromRGBO(254, 83, 187, 1),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 50,
+          height: 75,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
