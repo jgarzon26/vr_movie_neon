@@ -9,22 +9,30 @@ class SelectionPage extends StatelessWidget {
   Widget build(BuildContext context){
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+      backgroundColor: Color.fromRGBO(25, 25, 27, 0.8),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              'What would you like to watch?',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+              child: Text(
+                'What would you like to watch?',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
               ),
             ),
             ListTile(
+              horizontalTitleGap: 0,
+              tileColor: Color.fromRGBO(25, 25, 27, 1),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
               leading: Icon(
                 Icons.search,
                 color: Colors.white,
@@ -96,6 +104,7 @@ class SelectionPage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        color: Color.fromRGBO(25, 25, 27, 1),
         shape: CircularNotchedRectangle(),
         child: Container(
           height: 50,
@@ -106,24 +115,28 @@ class SelectionPage extends StatelessWidget {
                 onPressed: () {},
                 icon: ImageIcon(
                   AssetImage('lib/movies_selection/icons/Symbol.png'),
+                  color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: ImageIcon(
                   AssetImage('lib/movies_selection/icons/PlayButtonInTV.png'),
+                  color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: ImageIcon(
                   AssetImage('lib/movies_selection/icons/Library.png'),
+                  color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: ImageIcon(
                   AssetImage('lib/movies_selection/icons/Down_Arrow.png'),
+                  color: Colors.white,
                 ),
               ),
             ],
