@@ -4,8 +4,11 @@ class EternalPage extends StatelessWidget {
 
   @override
   Widget build (BuildContext context){
+    
+    const _rating = 3;
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(25, 25, 27, 0.3),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
@@ -27,7 +30,75 @@ class EternalPage extends StatelessWidget {
           ),
         ],
       ),
-
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('lib/eternal_page/assets/image 76.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Text(
+                      'Eternals',
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      '2021 Action-Adventure-Fantasy 2h36m',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: () {
+                        List<Widget> stars = [];
+                        for (int i = 0; i < 5; i++) {
+                          stars.add(
+                            Icon(
+                              Icons.star,
+                              color: (i < _rating) ? Color.fromRGBO(242, 163, 58, 1) : Colors.white,
+                            ),
+                          );
+                        }
+                        return stars;
+                      }(),
+                    ),
+                    Text(
+                      "The saga of the Eternals, "
+                          "a race of immortal beings who lived on Earth "
+                          "and shaped its history and civilizations.",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Container(
+            color: Color.fromRGBO(25, 25, 27, 1),
+            height: 2,
+            width: double.infinity,
+          ),
+          
+        ],
+      ),
     );
   }
 }
