@@ -57,7 +57,7 @@ class EternalPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: MediaQuery.of(context).size.height * 0.75,
             child: Stack(
               children: [
                 ShaderMask(
@@ -124,14 +124,18 @@ class EternalPage extends StatelessWidget {
                             return stars;
                           }(),
                         ),
-                        Text(
-                          "The saga of the Eternals, "
-                              "a race of immortal beings who lived on Earth "
-                              "and shaped its history and civilizations.",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: Text(
+                            "The saga of the Eternals, "
+                                "a race of immortal beings who lived on Earth "
+                                "and shaped its history and civilizations.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.7),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
                         ),
                       ],
@@ -141,10 +145,13 @@ class EternalPage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            color: Color.fromRGBO(25, 25, 27, 1),
-            height: 10,
-            width: double.infinity,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Container(
+              color: Color.fromRGBO(25, 25, 27, 1),
+              height: 5,
+              width: MediaQuery.of(context).size.width * 0.8,
+            ),
           ),
           Text('Cast'),
           /*
