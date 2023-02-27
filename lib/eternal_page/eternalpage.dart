@@ -56,11 +56,11 @@ class EternalPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: ShaderMask(
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Stack(
+              children: [
+                ShaderMask(
                   shaderCallback: (Rect bounds) {
                     return LinearGradient(
                       begin: Alignment.center,
@@ -72,58 +72,74 @@ class EternalPage extends StatelessWidget {
                   child: Image.asset('lib/eternal_page/assets/image 76.png'),
                   blendMode: BlendMode.srcATop,
                 ),
-              ),
-              Positioned(
-                bottom: 0,
-                right: 0,
-                left: 0,
-                child: Column(
-                  children: [
-                    Text(
-                      'Eternals',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
+                Positioned(
+                  right: 10,
+                  bottom: 100,
+
+                  top: 200,
+                  child: FloatingActionButton(
+                    onPressed: () {},
+                    child: ImageIcon(
+                      AssetImage('lib/eternal_page/icons/play.png'),
+                      color: Colors.white,
                     ),
-                    Text(
-                      '2021 Action-Adventure-Fantasy 2h36m',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: () {
-                        List<Widget> stars = [];
-                        for (int i = 0; i < 5; i++) {
-                          stars.add(
-                            Icon(
-                              Icons.star,
-                              color: (i < _rating) ? Color.fromRGBO(242, 163, 58, 1) : Colors.white,
-                            ),
-                          );
-                        }
-                        return stars;
-                      }(),
-                    ),
-                    Text(
-                      "The saga of the Eternals, "
-                          "a race of immortal beings who lived on Earth "
-                          "and shaped its history and civilizations.",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                    backgroundColor: Color.fromRGBO(25, 25, 27, 1),
+                  ),
                 ),
-              ),
-            ],
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    height: 230,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          'Eternals',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          '2021 Action-Adventure-Fantasy 2h36m',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: () {
+                            List<Widget> stars = [];
+                            for (int i = 0; i < 5; i++) {
+                              stars.add(
+                                Icon(
+                                  Icons.star,
+                                  color: (i < _rating) ? Color.fromRGBO(242, 163, 58, 1) : Colors.white,
+                                ),
+                              );
+                            }
+                            return stars;
+                          }(),
+                        ),
+                        Text(
+                          "The saga of the Eternals, "
+                              "a race of immortal beings who lived on Earth "
+                              "and shaped its history and civilizations.",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           Container(
             color: Color.fromRGBO(25, 25, 27, 1),
@@ -152,15 +168,6 @@ class EternalPage extends StatelessWidget {
            */
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: ImageIcon(
-          AssetImage('lib/eternal_page/icons/play.png'),
-          color: Colors.white,
-        ),
-        backgroundColor: Color.fromRGBO(25, 25, 27, 1),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
