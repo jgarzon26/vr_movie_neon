@@ -15,6 +15,7 @@ class EternalPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        leadingWidth: 90,
         leading: Container(
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.3),
@@ -36,6 +37,7 @@ class EternalPage extends StatelessWidget {
         ),
         actions: [
           Container(
+            margin: EdgeInsets.only(right: 20),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.3),
               border: Border.all(
