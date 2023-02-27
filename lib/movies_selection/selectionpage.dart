@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vr_movie_neon/eternal_page/eternalpage.dart';
 import 'package:vr_movie_neon/movies_selection/data/movieImageButton.dart';
 import 'package:vr_movie_neon/movies_selection/data/upcoming_movies.dart';
 import 'package:vr_movie_neon/movies_selection/new_movies.dart';
@@ -68,7 +69,12 @@ class SelectionPage extends StatelessWidget {
               height: 180,
               child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: newMovies.map((e) => MovieImageButton(imageLink: e,)).toList(),
+                  children: newMovies.map((e) {
+                    if(e == 'lib/movies_selection/assets/image 90.png'){
+                      return MovieImageButton(imageLink: e, moviePage: EternalPage(),);
+                    }
+                    return MovieImageButton(imageLink: e,);
+                  }).toList(),
               ),
             ),
             Padding(

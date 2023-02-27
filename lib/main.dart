@@ -6,7 +6,7 @@ import 'homepage/homepage.dart';
 main() {
   runApp(
     MaterialApp(
-      home: EternalPage(),
+      home: HomePage(),
     ),
   );
 }
