@@ -153,26 +153,42 @@ class EternalPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
             ),
           ),
-          Text('Cast'),
-          /*
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              children: () {
-                List<Widget> castCards = [];
-                for (int i = 0; i < cast.length; i++) {
-                  castCards.add(
-                    CastCard(
-                      name: cast[i]['name']!,
-                      image: cast[i]['image']!,
-                    ),
-                  );
-                }
-                return castCards;
-              }(),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: Text(
+              'Cast',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
-           */
+          Expanded(
+            child: MediaQuery.removePadding(
+              context: context,
+              child: GridView.count(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                childAspectRatio: 4,
+                mainAxisSpacing: 0,
+                crossAxisSpacing: 0,
+                children: () {
+                  List<Widget> castCards = [];
+                  for (int i = 0; i < cast.length; i++) {
+                    castCards.add(
+                      CastCard(
+                        name: cast[i]['name']!,
+                        image: cast[i]['image']!,
+                      ),
+                    );
+                  }
+                  return castCards;
+                }(),
+              ),
+            ),
+          ),
         ],
       ),
     );
