@@ -10,24 +10,46 @@ class EternalPage extends StatelessWidget {
     const _rating = 3;
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Color.fromRGBO(25, 25, 27, 0.3),
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: ImageIcon(
-            AssetImage('lib/eternal_page/icons/back.png'),
-            color: Colors.white,
+        leading: Container(
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.3),
+            border: Border.all(
+              width: 3,
+              color: Colors.white,
+            ),
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: ImageIcon(
+              AssetImage('lib/eternal_page/icons/back.png'),
+              color: Colors.white,
+            ),
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: ImageIcon(
-              AssetImage('lib/eternal_page/icons/menu.png'),
-              color: Colors.white,
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.3),
+              border: Border.all(
+                width: 3,
+                color: Colors.white,
+              ),
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: ImageIcon(
+                AssetImage('lib/eternal_page/icons/menu.png'),
+                color: Colors.white,
+              ),
             ),
           ),
         ],
@@ -37,20 +59,30 @@ class EternalPage extends StatelessWidget {
           Stack(
             children: [
               Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('lib/eternal_page/assets/image 76.png'),
-                    fit: BoxFit.cover,
-                  ),
+                width: MediaQuery.of(context).size.width,
+                child: ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.transparent, Colors.black],
+                      stops: [0, 0.6],
+                    ).createShader(bounds);
+                  },
+                  child: Image.asset('lib/eternal_page/assets/image 76.png'),
+                  blendMode: BlendMode.srcATop,
                 ),
               ),
-              Container(
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 0,
                 child: Column(
                   children: [
                     Text(
                       'Eternals',
                       style: TextStyle(
-                        fontSize: 40,
+                        fontSize: 30,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
                       ),
