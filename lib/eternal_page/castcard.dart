@@ -9,13 +9,25 @@ class CastCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      visualDensity: VisualDensity.comfortable,
+      horizontalTitleGap: -20,
       leading: CircleAvatar(
+        radius: 30,
         backgroundImage: AssetImage(image),
       ),
-      title: Text(
-        name,
-        style: TextStyle(
-          color: Colors.white,
+      title: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.15),
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Text(
+          name,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12,
+          ),
         ),
       ),
     );

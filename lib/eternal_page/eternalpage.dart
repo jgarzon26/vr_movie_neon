@@ -172,7 +172,7 @@ class EternalPage extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 childAspectRatio: 4,
-                mainAxisSpacing: 0,
+                mainAxisSpacing: 10,
                 crossAxisSpacing: 0,
                 children: () {
                   List<Widget> castCards = [];
